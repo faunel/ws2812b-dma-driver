@@ -1,0 +1,21 @@
+{
+    "name":"ws2812b-dma-driver",
+    "config":
+    {
+        "led_pin":
+        {
+            "help": "Select the led pin (SERVO port).",
+            "macro_name": "WS2812B_LEDS_PIN",
+            "accepted_values": [1, 2, 3, 4],
+            "value": 1,
+            "required": false
+        },
+        "num_leds":
+        {
+            "help": "Select the led pin.",
+            "macro_name": "WS2812B_LEDS_NUM",
+            "value": 16,
+            "required": false
+        }
+    }
+}
