@@ -171,10 +171,10 @@ void TheatreChase(const Color_t * c, int delay_ms, int cycle_num)
 {
     for(int i=0; i<cycle_num; i++)
     {
-        for(int q=0;q<3;q+=3)
+        for(int q=0;q<3;q++)
         {
             clearAll();
-            for(int j=0; j< NUM_LEDS; j+=3)
+            for(int j=0; (j+q)< NUM_LEDS; j+=3)
             {
                 setPixel_GRB(c,j+q);  
             }
