@@ -20,5 +20,5 @@ void TheatreChase(const Color_t * c, int delay_ms, int cycle_num);
 void TheatreChaseRainbow(int delay_ms, int cycle_num);
 void Fire(int cooling_rate, int sparking_rate, int delay_ms);
 void meteorRain(const Color_t * c, uint8_t meteorSize, uint8_t meteorTrailDecay, bool meteorRandomDecay, int delay_ms);
-
+void HalfBlink(const Color_t * c, int delay_ms);
 #endif /* __WS2812B_EFFECTS_H__ */

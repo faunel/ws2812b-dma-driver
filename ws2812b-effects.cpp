@@ -303,3 +303,15 @@ void meteorRain(const Color_t * c, uint8_t meteorSize, uint8_t meteorTrailDecay,
     wait_ms(delay_ms);
   }
 }
+
+void HalfBlink(const Color_t * c, int delay_ms)
+{
+    clearAll();
+    setRange_GRB(c,0,NUM_LEDS/2);
+    drawFrame();
+    wait_ms(delay_ms);
+    clearAll();
+    setRange_GRB(c, NUM_LEDS/2, NUM_LEDS/2);
+    drawFrame();
+    wait_ms(delay_ms);
+}
