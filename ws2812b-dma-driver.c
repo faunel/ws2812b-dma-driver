@@ -87,7 +87,9 @@ void ws2812b_init(void)
 
 void drawFrame(void)
 {
+    __disable_irq();
 	HAL_TIM_PWM_Start_DMA(&htimx, TIMx_CHANNEL, (uint32_t *)ws2812b_data, LED_BUFFER_SIZE);
+    __enable_irq();
 }
 
 void setPixel_GRB(const Color_t * color, int px_index)
