@@ -16,6 +16,13 @@
             "macro_name": "WS2812B_LEDS_NUM",
             "value": 16,
             "required": false
+        },
+        "fifo_enabled":
+        {
+            "help": "DMA FIFO mode.",
+            "macro_name": "WS2812B_FIFO_MODE",
+            "value": 0,
+            "required": false
         }
     }
 }

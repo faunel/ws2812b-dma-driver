@@ -84,8 +84,11 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
     hdma_timx_chn.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     hdma_timx_chn.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
     hdma_timx_chn.Init.Mode = DMA_NORMAL;
-    // hdma_timx_chn.Init.Priority = DMA_FIFOMODE_DISABLE;
+#if WS2812B_FIFO_MODE
     hdma_timx_chn.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
+#else
+    hdma_timx_chn.Init.Priority = DMA_FIFOMODE_DISABLE;
+#endif
     hdma_timx_chn.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
     hdma_timx_chn.Init.MemBurst = DMA_MBURST_INC8;
     hdma_timx_chn.Init.PeriphBurst = DMA_PBURST_SINGLE;
