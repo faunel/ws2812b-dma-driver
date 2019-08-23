@@ -89,9 +89,7 @@ void ws2812b_init(void)
 
 void drawFrame(void)
 {
-    __disable_irq();
 	HAL_TIM_PWM_Start_DMA(&htimx, TIMx_CHANNEL, (uint32_t *)ws2812b_data, LED_BUFFER_SIZE);
-    __enable_irq();
 }
 
 void setPixel_GRB(const Color_t * color, int px_index)
@@ -137,6 +135,13 @@ void clearAll(void)
 {
 	for(int i=0;i<(LED_BUFFER_SIZE-RESET_SLOT);i++)
 		ws2812b_data[i] = WS2812B_TH0;
+}
+
+void setColorBrightness(const Color_t * in, Color_t * out, float brightness)
+{
+    out->r = brightness * in->r;
+    out->g = brightness * in->g;
+    out->b = brightness * in->b;
 }
 
 void TIMx_DMA_IRQHandler(void)

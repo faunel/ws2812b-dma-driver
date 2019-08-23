@@ -117,6 +117,7 @@ void getPixelColor(int px_index, Color_t * px_color);
 void setPixel_GRB(const Color_t * Color, int px_index);
 void setAll_GRB(const Color_t * color);
 void setRange_GRB(const Color_t * color, int start_px_index, int len);
+void setColorBrightness(const Color_t * in, Color_t * out, float brightness);
 
 /* ******************** */ 
 

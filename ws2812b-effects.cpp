@@ -22,13 +22,6 @@ static long random(long a, long b)
     return (random() % (b-a)) + a;
 }
 
-static inline void setColorBrightness(const Color_t * in, Color_t * out, float brightness)
-{
-    out->r = brightness * in->r;
-    out->g = brightness * in->g;
-    out->b = brightness * in->b;
-}
-
 void RunningLights(const Color_t *c, int delay_ms, float time_s)
 {
     Color_t new_color;
