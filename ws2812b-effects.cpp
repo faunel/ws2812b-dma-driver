@@ -64,7 +64,7 @@ void FadeInOut(const Color_t *c, int delay_ms, float time_s)
 void Twinkle(const Color_t *c, int delay_ms, int count, bool clear)
 {
     if(!is_seed_set)
-        randomSeed(ticker_read_us(get_us_ticker_data()));
+        randomSeed(0);
     if(clear)
         clearAll();
     for(int i=0;i<count;i++)
